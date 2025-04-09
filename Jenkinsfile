@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Compile') {
-            agent { label 'slave01' }
+            agent any
             steps {
                 sh 'mvn compile'
             }
@@ -29,13 +29,13 @@ pipeline {
 }
         }
         stage(UnitTesting){
-            agent { label 'slave01' }
+            agent any
             steps {
                 sh 'mvn test'
             }
         }
         stage('Codecoverage'){
-            agent { label 'slave01' }
+            agent any
             steps {
                sh 'mvn verify'   
             }
