@@ -6,7 +6,7 @@ pipeline {
     agent none
     stages {
         stage('Clonerepo') {
-            agent { label 'slave01' }
+            agent any
             steps {
                 git 'https://github.com/bhasker-manikyala/DevOpsClassCodes.git'
             }
